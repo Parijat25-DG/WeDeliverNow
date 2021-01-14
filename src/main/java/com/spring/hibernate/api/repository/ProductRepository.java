@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.spring.hibernate.api.entity.DecorProduct;
+import com.spring.hibernate.api.entity.ProductDetails;
 
-public interface DecorRepository extends JpaRepository<DecorProduct,Integer>{
+public interface ProductRepository extends JpaRepository<ProductDetails,Integer>{
 
 	@Query
-	public List<DecorProduct> findByCategory(String category);
+	public List<ProductDetails> findByCategory(String category);
 }

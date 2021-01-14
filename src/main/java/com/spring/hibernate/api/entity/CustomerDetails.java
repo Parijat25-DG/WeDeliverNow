@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Customer {
+public class CustomerDetails {
 
 	@Id
 	@GeneratedValue
@@ -18,9 +18,9 @@ public class Customer {
 	private String name;
 	private String email;
 	private String gender;
-	@OneToMany(targetEntity = DecorProduct.class, cascade = CascadeType.ALL)
+	@OneToMany(targetEntity = ProductDetails.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "cp_fk", referencedColumnName = "id")
-	private List<DecorProduct> products;
+	private List<ProductDetails> products;
 	
 	public int getId() {
 		return id;
@@ -46,10 +46,10 @@ public class Customer {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public List<DecorProduct> getProducts() {
+	public List<ProductDetails> getProducts() {
 		return products;
 	}
-	public void setProducts(List<DecorProduct> products) {
+	public void setProducts(List<ProductDetails> products) {
 		this.products = products;
 	}
 	
